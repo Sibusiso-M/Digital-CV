@@ -8,7 +8,9 @@ const administrator = require("./src/routes/administrator");
 const path = require("path");
 
 //Static Files
+
 // it’s safer to use the absolute path of the directory that you want to serve:
+
 app.use("/static", express.static(path.join(__dirname, "public")));
 
 app.use("/digital-cv", digitalCV );
