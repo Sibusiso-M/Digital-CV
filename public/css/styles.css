@@ -90,7 +90,6 @@ body {
     }
 
     #nav-menu {
-        background-color: darkorange;
-        padding: 10px;
+        margin: 1px;
     }
 }
