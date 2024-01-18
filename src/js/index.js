@@ -10,7 +10,6 @@ hamburgerBarCross.classList.add("close");
 navMenu.classList.add("close");
 
 hamburgerBar.onclick = () => {
-  console.log("click hamburgerBar");
   hamburgerBar.classList.remove("open");
   hamburgerBar.classList.add("close");
   hamburgerBarCross.classList.add("open");
@@ -18,7 +17,6 @@ hamburgerBar.onclick = () => {
 };
 
 hamburgerBarCross.onclick = () => {
-  console.log("click hamburgerBarCross");
   hamburgerBarCross.classList.add("close");
   hamburgerBarCross.classList.remove("open");
   hamburgerBar.classList.remove("close");
