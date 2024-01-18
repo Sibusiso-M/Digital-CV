@@ -54,7 +54,6 @@ body {
     #digital-cv-nav ul li a {
         text-decoration: none;
         color: rgb(0, 0, 0);
-
     }
 
     #digital-cv-nav img {
@@ -68,7 +67,7 @@ body {
     }
 
     .open {
-        display: flex;
+        display: block;
     }
 
     #hamburger-section {
@@ -81,9 +80,17 @@ body {
 
     #hamburger-form {
         background-color: rgb(48, 73, 74);
+        display: flex;
     }
 
     #hamburger-section-header {
         background-color: rgb(243, 1, 110);
+        align-items: center;
+        display: flex;
+    }
+
+    #nav-menu {
+        background-color: darkorange;
+        padding: 10px;
     }
 }
