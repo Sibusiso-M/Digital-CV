@@ -11,10 +11,12 @@ const path = require("path");
 
 // it’s safer to use the absolute path of the directory that you want to serve:
 
-app.use("/static", express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname)));
+app.use("",express.static(path.join(__dirname, "public")));
+app.use("/static", express.static(path.join(__dirname, "src")));
 
-app.use("/digital-cv", digitalCV );
-app.use("/digital-cv", administrator );
+app.use("/digital-cv", digitalCV);
+app.use("/digital-cv", administrator);
 
 app.get("*", (req, res) => {
   res.status(404).send("Sorry page not found.");
