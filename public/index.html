@@ -7,7 +7,7 @@
     <title>Sibusiso Digital CV</title>
   </head>
   <body>
-    <section id="digital-cv-body">
+    <main id="digital-cv-body">
       <nav id="digital-cv-nav">
         <section id="hamburger-section">
           <h2 id="hamburger-section-header"><a href="/">Sibusiso Mdlovu</a></h2>
@@ -29,18 +29,77 @@
         <ul id="nav-menu">
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#">Skills</a></li>
+          <li><a href="#">experience</a></li>
+          <li><a href="#">hobbies</a></li>
+          <li><a href="#">Contact me</a></li>
+          <li><a href="#">Download CV</a></li>
         </ul>
       </nav>
 
       <section class="digital-cv-section">About Me Name and section</section>
       <section class="digital-cv-section">Skills</section>
+      <section class="digital-cv-section">experience</section>
       <section class="digital-cv-section">hobbies</section>
-      <section class="digital-cv-section">contact me</section>
-    </section>
-    <br />
+      <section class="digital-cv-section">
+        <h2 class="section-heading">contact me</h2>
+
+        <section id="digital-cv-contact-section">
+          <ul>
+            <li><address>Address</address></li>
+            <li><Email>email icon</Email></li>
+            <li>Socials :</li>
+          </ul>
+        </section>
+
+        <form id="contact-me-form" method="POST" action="/new_visit_post">
+          <!-- apply regex validation -->
+
+          <label for="firstName">First Name:</label>
+          <input
+            pattern="[a-zA-Z]{2,256}$"
+            title="FirstName: Must be filled, only one name allowed."
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Enter Your Name"
+          /><br />
+          <label for="lastName">Last Name:</label>
+          <input
+            pattern="[a-zA-Z]{2,256}$"
+            title="Last Name: Must be filled, only one surname allowed."
+            type="text"
+            id="lastName"
+            name="lastName"
+            required
+            placeholder="Enter Your Last Name"
+          /><br />
+          <label for="email">Email:</label>
+          <input
+            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            title="Email: Must be in the following order: 'characters@characters.domain'"
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Enter Your Email Address"
+          /><br />
+          <label for="message">Message:</label>
+          <textarea
+            name="message"
+            rows="5"
+            cols="30"
+            placeholder="Please write your message here."
+            maxlength="256"
+            title="Message: May not be empty, and can not exceed 256 characters."
+          ></textarea
+          ><br />
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+    </main>
   </body>
+
   <script type="text/javascript" src="/static/js/index.js"></script>
-  <!-- Don't include server on client -->
-  <!-- <script type="text/javascript" src="/express.js"></script> -->
 </html>

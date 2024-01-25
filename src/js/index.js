@@ -23,3 +23,5 @@ hamburgerBarCross.onclick = () => {
   hamburgerBar.classList.add("open");
   navMenu.classList.remove("open");
 };
+
+//check message input pattern="[A-Za-z0-1]{256}$"

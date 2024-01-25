@@ -16,17 +16,10 @@ body {
     padding: 0 20px 20px 20px;
 }
 
-
 @media (max-width : 768px) {
+
     /* CSS rules */
-
-    h1 {
-        font-size: 60px;
-        text-align: center;
-    }
-
-    p,
-    li {
+    p {
         font-size: 16px;
         line-height: 2;
         letter-spacing: 1px;
@@ -45,10 +38,9 @@ body {
     }
 
     #digital-cv-nav ul li {
-        padding: 15px 15px 15px 5px;
-        border: 5px solid rgb(0, 0, 0);
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        border: 2px solid rgb(0, 0, 0);
         background-color: rgb(255, 255, 255);
-
     }
 
     #digital-cv-nav ul li a {
@@ -92,4 +84,30 @@ body {
     #nav-menu {
         margin: 1px;
     }
+
+    #contact-me-form {
+        background-color: rgb(187, 221, 255);
+        display: flex;
+        flex-direction: column;
+    }
+
+    #digital-cv-contact-section {
+        background-color: rgb(104, 186, 100);
+    }
+
+    #digital-cv-contact-section ul {
+        background-color: rgb(240, 144, 202);
+        text-decoration: none;
+        list-style-type: none;
+    }
+
+    form label {
+        background-color: rgb(170, 170, 170);
+        width: 100%;
+    }
+
+    textarea {
+        resize: none;
+    }
+
 }
