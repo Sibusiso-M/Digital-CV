@@ -12,3 +12,5 @@ const contactQueries = {
 };
 
 const adminQueries = {};
+
+module.exports = { databaseQuery, contactQueries, adminQueries };
