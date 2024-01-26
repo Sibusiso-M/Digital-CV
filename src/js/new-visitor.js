@@ -17,4 +17,22 @@ const createTable = async () => {
   return await queryFunctions(visitorQueries.createVisitorsTable);
 };
 
+const addANewVisitor = async (
+  firstName,
+  lastName,
+  dateOfVisit,
+  timeOfVisit,
+  message,
+  emailAddress
+) => {
+  return queryFunctions(queries.addAVisitor, [
+    firstName,
+    lastName,
+    dateOfVisit,
+    timeOfVisit,
+    message,
+    emailAddress,
+  ]);
+};
+
 module.exports = { createTable };
