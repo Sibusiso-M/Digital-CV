@@ -24,4 +24,5 @@ hamburgerBarCross.onclick = () => {
   navMenu.classList.remove("open");
 };
 
+
 //check message input pattern="[A-Za-z0-1]{256}$"
