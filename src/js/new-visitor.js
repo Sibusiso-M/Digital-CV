@@ -3,12 +3,14 @@ const { pool } = require("../configurations");
 const { errorMessage } = require("../helper-objects/error-messages");
 
 const queryFunctions = async (query, values = []) => {
-  let visitors;
-  if (query !== undefined) {
-    visitors = await pool.query(query, values);
-    return visitors.rows;
-  } else {
-    throw new Error(errorMessage.emptyQuery);
+  try {
+    if (query === undefined) throw new Error(errorMessage.emptyQuery);
+
+    const { rows } = await pool.query(query, values);
+    return rows;
+  } catch {
+    console.log("Error executing query:", error.message);
+    throw error;
   }
 };
 
@@ -17,15 +19,15 @@ const createTable = async () => {
   return await queryFunctions(visitorQueries.createVisitorsTable);
 };
 
-const addANewVisitor = async (
+const addANewVisitor = async ({
   firstName,
   lastName,
   dateOfVisit,
   timeOfVisit,
   message,
-  emailAddress
-) => {
-  return queryFunctions(queries.addAVisitor, [
+  emailAddress,
+}) => {
+  return queryFunctions(visitorQueries.addAVisitor, [
     firstName,
     lastName,
     dateOfVisit,
