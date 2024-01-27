@@ -5,7 +5,6 @@ const { errorMessage } = require("../helper-objects/error-messages");
 const queryFunctions = async (query, values = []) => {
   try {
     if (query === undefined) throw new Error(errorMessage.emptyQuery);
-
     const { rows } = await pool.query(query, values);
     return rows;
   } catch {
