@@ -1,4 +1,4 @@
-const validateString = (name) => {
+const validateName = (name) => {
   const pattern = /^[A-Za-z]+$/;
 
   if (!pattern.test(name)) {
@@ -17,3 +17,5 @@ const validateEmail = (emailAddress) => {
   }
   return true;
 };
+
+module.exports = { validateName, validateEmail };
