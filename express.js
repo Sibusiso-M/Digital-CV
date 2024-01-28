@@ -21,7 +21,7 @@ app.use("/digital-cv", digitalCV);
 app.use("/digital-cv", administrator);
 
 app.get("*", (request, response) => {
-  res.status(404).send("Sorry page not found.");
+  response.status(404).send("Sorry page not found.");
 });
 
 createTable();
