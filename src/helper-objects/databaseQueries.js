@@ -1,5 +1,5 @@
 const databaseQuery = {
-  createDatabase: "",
+  createDatabase: "CREATE DATABASE 'DigitalCVAppDatabase'",
   createAdminTable:
     "CREATE TABLE IF NOT EXISTS administrator (adminId SERIAL, password varchar(256)",
 };
