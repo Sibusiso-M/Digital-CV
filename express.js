@@ -8,6 +8,7 @@ const administrator = require("./src/routes/administrator");
 const path = require("path");
 
 const bodyParser = require("body-parser");
+const { createTable } = require("./src/js/new-visitor");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -23,6 +24,7 @@ app.get("*", (request, response) => {
   res.status(404).send("Sorry page not found.");
 });
 
+createTable();
 app.listen(port, () => {
   console.log(`Server listening on port http://localhost:${port}`);
 });
