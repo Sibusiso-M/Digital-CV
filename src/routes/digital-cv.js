@@ -20,35 +20,38 @@ const sendFileHandler = (fileName) => (request, response) => {
 router.get("/", sendFileHandler("index.html"));
 
 router.post("/new_visitor_post", async (request, response) => {
-  console.log("new visitor post attempted");
-  console.log(request.body);
-
   const { firstName, lastName, message, emailAddress } = request.body;
 
-  const date = new Date().toLocaleString([], { hour12: false });
-  const [dateOfVisit, timeOfVisit] = date
-    .split(",")
-    .map((dateValues) => dateValues.trim());
+  const currentDateAndTime = new Date();
+
+  const year = currentDateAndTime.getFullYear();
+  const month = currentDateAndTime.getMonth() + 1;
+  const day = currentDateAndTime.getDate();
+
+  const hours = currentDateAndTime.getHours();
+  const minutes = currentDateAndTime.getMinutes();
+  const seconds = currentDateAndTime.getSeconds();
+  const dateOfVisit = `${year}-${month}-${day}`;
+  const timeOfVisit = `${hours}:${minutes}:${seconds}`;
 
   validateFirstName(firstName);
   validateLastName(lastName);
   validateEmail(emailAddress);
 
-  const newVisitor = await addANewVisitor(
+  await addANewVisitor({
     firstName,
     lastName,
     dateOfVisit,
     timeOfVisit,
     message,
-    emailAddress
-  );
-
-  newVisitor
+    emailAddress,
+  })
     .then((result) => {
+      const row = result[0];
       response.status(201).send({
         success: "true",
         message: "stored contact (visitor) successfully",
-        result: result[0],
+        result: row,
       });
     })
     .catch((error) => {
@@ -58,8 +61,6 @@ router.post("/new_visitor_post", async (request, response) => {
         error: error.message,
       });
     });
-
-  response.send("hello");
 });
 
 module.exports = router;

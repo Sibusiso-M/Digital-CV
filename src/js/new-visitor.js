@@ -32,14 +32,14 @@ const createTable = async () => {
   return await queryFunctions(visitorQueries.createVisitorsTable);
 };
 
-const addANewVisitor = async (
+const addANewVisitor = async ({
   firstName,
   lastName,
   dateOfVisit,
   timeOfVisit,
   emailAddress,
-  message
-) => {
+  message,
+}) => {
   return queryFunctions(visitorQueries.addAVisitor, [
     firstName,
     lastName,
