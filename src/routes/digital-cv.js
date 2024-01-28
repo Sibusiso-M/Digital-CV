@@ -6,7 +6,8 @@ const publicPath = path.join(__dirname, "./../../public");
 
 const { addANewVisitor } = require("../js/new-visitor");
 const {
-  validateName,
+  validateFirstName,
+  validateLastName,
   validateEmail,
 } = require("../helper-functions/new-visitor-utilities");
 
@@ -29,8 +30,8 @@ router.post("/new_visitor_post", async (request, response) => {
     .split(",")
     .map((dateValues) => dateValues.trim());
 
-  validateName(firstName);
-  validateName(lastName);
+  validateFirstName(firstName);
+  validateLastName(lastName);
   validateEmail(emailAddress);
 
   const newVisitor = await addANewVisitor(
@@ -41,7 +42,7 @@ router.post("/new_visitor_post", async (request, response) => {
     message,
     emailAddress
   );
-  
+
   newVisitor
     .then((result) => {
       response.status(201).send({
