@@ -11,7 +11,7 @@ const {
   validateEmail,
 } = require("../helper-functions/new-visitor-utilities");
 
-// router.use(express.static(publicPath));
+router.use(express.static(publicPath));
 
 const sendFileHandler = (fileName) => (request, response) => {
   response.sendFile(fileName, { root: publicPath });
