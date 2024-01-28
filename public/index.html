@@ -52,14 +52,18 @@
           </ul>
         </section>
 
-        <form id="contact-me-form" method="POST" action="/digital-cv/new_visitor_post">
+        <form
+          id="contact-me-form"
+          method="POST"
+          action="/digital-cv/new_visitor_post"
+        >
           <label for="firstName">First Name:</label>
           <input
             pattern="[a-zA-Z]{2,256}$"
             title="FirstName: Must be filled, only one name allowed."
             type="text"
-            id="name"
-            name="name"
+            id="firstName"
+            name="firstName"
             required
             placeholder="Enter Your Name"
           /><br />
@@ -93,8 +97,12 @@
             title="Message: May not be empty, and can not exceed 256 characters."
           ></textarea
           ><br />
-          <input type="submit" value="Submit" id="visitorSubmitButton"/>
-          <input type="button" value="Clear Fields"  id="visitorClearFieldsButton" />
+          <input type="submit" value="Submit" id="visitorSubmitButton" />
+          <input
+            type="button"
+            value="Clear Fields"
+            id="visitorClearFieldsButton"
+          />
         </form>
       </section>
     </main>
