@@ -7,7 +7,7 @@ const queryFunctions = async (query, values = []) => {
     if (query === undefined) throw new Error(errorMessage.emptyQuery);
     const { rows } = await pool.query(query, values);
     return rows;
-  } catch {
+  } catch (error) {
     console.log("Error executing query:", error.message);
     throw error;
   }
@@ -18,22 +18,22 @@ const createTable = async () => {
   return await queryFunctions(visitorQueries.createVisitorsTable);
 };
 
-const addANewVisitor = async ({
+const addANewVisitor = async (
   firstName,
   lastName,
   dateOfVisit,
   timeOfVisit,
-  message,
   emailAddress,
-}) => {
+  message
+) => {
   return queryFunctions(visitorQueries.addAVisitor, [
     firstName,
     lastName,
     dateOfVisit,
     timeOfVisit,
-    message,
     emailAddress,
+    message,
   ]);
 };
 
-module.exports = { createTable };
+module.exports = { createTable, addANewVisitor };
