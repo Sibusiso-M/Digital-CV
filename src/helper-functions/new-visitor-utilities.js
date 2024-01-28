@@ -1,10 +1,17 @@
-const validateName = (name) => {
+const validateFirstName = (name) => {
   const pattern = /^[A-Za-z]+$/;
 
   if (!pattern.test(name)) {
-    throw new Error("String must only contain a string.");
+    throw new Error("First Name must only contain strings.");
   }
-  return true;
+};
+
+const validateLastName = (name) => {
+  const pattern = /^[A-Za-z]+$/;
+
+  if (!pattern.test(name)) {
+    throw new Error("LastName must only contain strings.");
+  }
 };
 
 const validateEmail = (emailAddress) => {
@@ -18,4 +25,4 @@ const validateEmail = (emailAddress) => {
   return true;
 };
 
-module.exports = { validateName, validateEmail };
+module.exports = { validateFirstName, validateLastName, validateEmail };
