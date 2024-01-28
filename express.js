@@ -7,18 +7,20 @@ const administrator = require("./src/routes/administrator");
 
 const path = require("path");
 
-//Static Files
+const bodyParser = require("body-parser");
 
-// it’s safer to use the absolute path of the directory that you want to serve:
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.use(express.static(path.join(__dirname)));
 app.use("", express.static(path.join(__dirname, "public")));
 app.use("/static", express.static(path.join(__dirname, "src")));
+app.use(express.json());
 
 app.use("/digital-cv", digitalCV);
 app.use("/digital-cv", administrator);
 
-app.get("*", (req, res) => {
+app.get("*", (request, response) => {
   res.status(404).send("Sorry page not found.");
 });
 
