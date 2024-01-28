@@ -26,3 +26,7 @@ hamburgerBarCross.onclick = () => {
 
 
 //check message input pattern="[A-Za-z0-1]{256}$"
+
+const visitorSubmitButton = document.getElementById("visitorSubmitButton");
+const visitorClearFieldsButton = document.getElementById("visitorClearFieldsButton");
+
