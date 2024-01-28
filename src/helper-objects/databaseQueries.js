@@ -4,7 +4,7 @@ const databaseQuery = {
     "CREATE TABLE IF NOT EXISTS administrator (adminId SERIAL, password varchar(256)",
 };
 
-const contactQueries = {
+const visitorQueries = {
   createVisitorsTable:
     "CREATE TABLE IF NOT EXISTS visitors (visitorId SERIAL, firstName varchar(256), lastName varchar(256), dateOfVisit DATE, timeOfVisit TIME, message varchar(256), PRIMARY KEY(visitorId)",
   addAVisitor:
@@ -13,4 +13,4 @@ const contactQueries = {
 
 const adminQueries = {};
 
-module.exports = { databaseQuery, contactQueries, adminQueries };
+module.exports = { databaseQuery, visitorQueries, adminQueries };
