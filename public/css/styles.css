@@ -113,18 +113,8 @@ body {
         flex-direction: column;
     }
 
-    #digital-cv-contact-section {
+    #digital-cv-contact-section h2 {
         background-color: rgb(104, 186, 100);
-    }
-
-    #digital-cv-section-socials ul {
-        background-color: rgb(240, 144, 202);
-    }
-
-    #digital-cv-section-socials li {
-        background-color: rgb(236, 4, 4);
-        width: 80%;
-
     }
 
     form label {
@@ -134,6 +124,23 @@ body {
 
     textarea {
         resize: none;
+    }
+
+    #digital-cv-section-socials {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    #digital-cv-section-socials h3 {
+        background-color: var(--text-color);
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        padding: 2px;
+        text-decoration-line: underline;
+        text-decoration-style: dotted;
     }
 
     #info-processing-section {
