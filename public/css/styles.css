@@ -1,3 +1,12 @@
+:root {
+    --primary-color: #17252A;
+    --secondary-color: #2B7A78;
+    --third-color: #3AAFA9;
+    --fourth-color: #DEF2F1;
+    --text-color: #FEFFFF;
+}
+
+
 * {
     padding: 0;
     margin: 0;
@@ -9,10 +18,10 @@
     line-height: 1;
 }
 
+
+
 body {
     flex: 1;
-    background-color: rgb(194, 172, 172);
-    color: rgb(0, 0, 0);
     border: 2px solid #FEFFFF;
 }
 
@@ -23,12 +32,11 @@ body {
     }
 
     #digital-cv-body {
-        background-color: rgb(193, 226, 141);
+        background-color: var(--text-color);
         text-decoration: none;
     }
 
     #digital-cv-nav ul {
-        background-color: rgb(101, 147, 27);
         text-decoration: none;
         list-style-type: none;
         text-align: center;
@@ -36,19 +44,30 @@ body {
 
     #digital-cv-nav ul li {
         padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-        border: 2px solid rgb(0, 0, 0);
-        background-color: rgb(255, 255, 255);
+        border: 2px solid var(--text-color);
+        background-color: var(--primary-color);
     }
 
     #digital-cv-nav ul li a {
         text-decoration: none;
-        color: rgb(0, 0, 0);
+        color: var(--text-color);
+    }
+
+    #nav-menu :hover {
+        color: var(--third-color);
     }
 
     #digital-cv-nav img {
-        background-color: aquamarine;
         width: 2rem;
         margin: 0.2rem;
+    }
+
+    #hamburger-bar {
+        background-color: var(--text-color);
+    }
+
+    #hamburger-bar-cross {
+        background-color: var(--text-color);
     }
 
     .close {
@@ -60,7 +79,6 @@ body {
     }
 
     #hamburger-section {
-        background-color: rgb(196, 88, 232);
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -68,14 +86,23 @@ body {
     }
 
     #hamburger-form {
-        background-color: rgb(48, 73, 74);
         display: flex;
     }
 
     #hamburger-section-header {
-        background-color: rgb(243, 1, 110);
         align-items: center;
         display: flex;
+        margin-left: 1rem;
+    }
+
+    #hamburger-section-header a {
+        color: var(--text-color);
+        text-decoration: none;
+    }
+
+    #hamburger-section-header :hover {
+        color: var(--third-color);
+        text-decoration: underline;
     }
 
     #nav-menu {
@@ -160,14 +187,14 @@ body {
     #about-me-icon {}
 
     .section-icons {
-        background-color: #3AAFA9;
+        background-color: var(--text-color);
         width: 12%;
         height: 12%;
-
     }
 
     .digital-cv-section h2 {
-        background-color: #b3d1cf;
+        background-color: var(--primary-color);
+        color: var(--text-color);
         display: flex;
         align-items: center;
         flex-direction: row;
@@ -175,6 +202,17 @@ body {
         flex-wrap: wrap;
         padding: 5px;
     }
+
+    .digital-cv-section {
+        /* background-color: var(--primary-color); */
+        color: var(--primary-color);
+        /* display: flex; */
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
 
     #skill-tags {
         display: flex;
@@ -280,16 +318,14 @@ body {
     }
 
     #hobbies-information {
-        background-color: orange;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-
+        padding: 1rem;
     }
 
     .hobby-information-block {
-        background-color: rgb(159, 152, 139);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -298,36 +334,35 @@ body {
     }
 
     .hobby-icon {
-        background-color: rgb(180, 180, 188);
-        width: 3rem;
-        height: 3rem;
+        background-color: white;
+        width: 4rem;
+        height: 4rem;
+        margin-top: 1rem;
     }
 
-    /* need to fix spelling */
-
-    #qulification-list {
+    #qualifications-list {
         list-style-type: disc;
         margin-left: 20px;
     }
 
-    #qulification-list li section h3 {
+    #qualifications-list li section h3 {
         text-decoration: underline;
     }
 
-    #qulification-list li section section {
+    #qualifications-list li section section {
         display: flex;
         align-items: baseline;
     }
 
-    #qulification-list li section h4 {
+    #qualifications-list li section h4 {
         margin-left: 10px;
     }
 
-    #qulification-list li section h5 {
-        font-weight: bold;
+    #qualifications-list li section h5 {
+        /* font-weight: bold; */
     }
 
-    #qulification-list li section span {
+    #qualifications-list li section span {
         font-weight: bold;
     }
 
@@ -338,12 +373,11 @@ body {
 
 }
 
-
 #digital-cv-nav {
+    background-color: var(--primary-color);
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: #333;
     transition: top 0.3s;
     z-index: 1;
 }
