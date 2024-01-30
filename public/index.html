@@ -4,47 +4,188 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./css/styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
     <title>Sibusiso Digital CV</title>
   </head>
   <body>
+    <nav id="digital-cv-nav">
+      <section id="hamburger-section">
+        <h2 id="hamburger-section-header"><a href="/">Sibusiso Mdlovu</a></h2>
+
+        <form id="hamburger-form">
+          <button type="button" id="hamburger-bar">
+            <img alt="hamburger-bar" src="./assets/icons/hamburger-bar.png" />
+          </button>
+
+          <button type="button" id="hamburger-bar-cross">
+            <img
+              alt="hamburger-bar-cross"
+              src="./assets/icons/hamburger-bar-cross.png"
+            />
+          </button>
+        </form>
+      </section>
+
+      <ul id="nav-menu">
+        <li><a href="#home-section">Home</a></li>
+        <li><a href="#digital-cv-section-about-me">About</a></li>
+        <li><a href="#digital-cv-section-skills">Skills</a></li>
+        <li><a href="#digital-cv-section-hobbies">Hobbies</a></li>
+        <li><a href="#digital-cv-section-experience">Experience</a></li>
+        <li>
+          <a href="#digital-cv-section-qualifications">Qualifications</a>
+        </li>
+        <li><a href="#digital-cv-section-contact-me">Contact me</a></li>
+        <li><a href="assets/Sibusiso_M_Mdlovu_CV.pdf">Download CV</a></li>
+      </ul>
+    </nav>
     <main id="digital-cv-body">
-      <nav id="digital-cv-nav">
-        <section id="hamburger-section">
-          <h2 id="hamburger-section-header"><a href="/">Sibusiso Mdlovu</a></h2>
+      <section id="digital-cv-section-about-me" class="digital-cv-section">
+        <h2>
+          <img
+            alt="moustache-man-icon"
+            src="/public/assets/icons/moustache-man-icon.png"
+            id="about-me-icon"
+            class="section-icons"
+          />
+          About Me
+        </h2>
 
-          <form id="hamburger-form">
-            <button type="button" id="hamburger-bar">
-              <img alt="hamburger-bar" src="./assets/icons/hamburger-bar.png" />
-            </button>
+        <p>
+          Hi 👋🏾 it's nice to meet you, I'm Sibusiso, A Full Stack Web Developer
+          From 📍 Pretoria, South Africa.
+        </p>
 
-            <button type="button" id="hamburger-bar-cross">
-              <img
-                alt="hamburger-bar-cross"
-                src="./assets/icons/hamburger-bar-cross.png"
-              />
-            </button>
-          </form>
+        <p>
+          I am a passionate Full-Stack Developer (Mobile and Web Applications),
+          but more importantly, I'm passionate about Innovation and technology.
+          <br />
+          I believe technology should be used to improve the quality of all
+          life, and I look forward to playing a role in doing so.
+        </p>
+      </section>
+      <section id="digital-cv-section-skills" class="digital-cv-section">
+        <h2>
+          <img
+            alt="moustache-man-icon"
+            src="/public/assets/icons/moustache-man-icon.png"
+            id="skills-icon"
+            class="section-icons"
+          />
+          Skills
+        </h2>
+
+        <section id="skill-tags">
+          <span class="skill javascript"
+            ><i class="fab fa-js"></i> JavaScript</span
+          >
+          <span class="skill html5"><i class="fab fa-html5"></i> HTML 5</span>
+          <span class="skill css3"><i class="fab fa-css3"></i> CSS</span>
+          <span class="skill mysql"><i class="fas fa-database"></i> MySQL</span>
+          <span class="skill postgresql"
+            ><i class="fas fa-database"></i> PostgreSQL</span
+          >
+          <span class="skill php"><i class="fab fa-php"></i> PHP</span>
+          <span class="skill api"><i class="fas fa-cogs"></i> API</span>
+          <span class="skill apache"><i class="fab fa-linux"></i> Apache</span>
+          <span class="skill python"><i class="fab fa-python"></i> Python</span>
+          <span class="skill git"><i class="fab fa-git"></i> Git</span>
+          <span class="skill nodejs"
+            ><i class="fab fa-node"></i> Node.JS & Express</span
+          >
+          <span class="skill docker"><i class="fab fa-docker"></i> Docker</span>
+          <span class="skill jasmine"
+            ><i class="fab fa-jasmine"></i> Jasmine</span
+          >
+          <span class="skill wordpress"
+            ><i class="fab fa-wordpress"></i> WordPress</span
+          >
+          <span class="skill oop"
+            ><i class="fas fa-object-group"></i> Object-Oriented
+            Programming</span
+          >
+          <span class="skill react"><i class="fab fa-react"></i> React</span>
+          <span class="skill redux"><i class="fab fa-react"></i> Redux</span>
+          <span class="skill react-native"
+            ><i class="fab fa-react"></i> React Native</span
+          >
+          <span class="skill figma"><i class="fab fa-figma"></i> Figma</span>
+          <span class="skill rest-api"
+            ><i class="fas fa-cogs"></i> REST API</span
+          >
         </section>
+      </section>
+      <section id="digital-cv-section-hobbies" class="digital-cv-section">
+        <h2>
+          <img
+            alt="moustache-man-icon"
+            src="/public/assets/icons/moustache-man-icon.png"
+            id="hobbies-icon"
+            class="section-icons"
+          />
+          Hobbies
+        </h2>
+        <section id="hobbies-information">
+          <section class="hobby-information-block">
+            <h4>Skipping</h4>
 
-        <ul id="nav-menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">experience</a></li>
-          <li><a href="#">hobbies</a></li>
-          <li><a href="#">Contact me</a></li>
-          <li><a href="#">Download CV</a></li>
-        </ul>
-      </nav>
+          </section>
 
-      <section class="digital-cv-section">About Me Name and section</section>
-      <section class="digital-cv-section">Skills</section>
-      <section class="digital-cv-section">experience</section>
-      <section class="digital-cv-section">hobbies</section>
-      <section class="digital-cv-section">
-        <h2 class="section-heading">contact me</h2>
+          <section class="hobby-information-block">
+            <h4>Home Workouts</h4>
+          </section>
 
-        <section id="digital-cv-contact-section">
+          <section class="hobby-information-block">
+            <h4>Walking</h4>
+          </section>
+
+          
+        </section>
+      </section>
+      <section
+        id="digital-cv-section-qualifications"
+        class="digital-cv-section"
+      >
+        <h2>
+          <img
+            alt="moustache-man-icon"
+            src="/public/assets/icons/moustache-man-icon.png"
+            id="experience"
+            class="section-icons"
+          />
+          Qualifications
+        </h2>
+      </section>
+      <section id="digital-cv-section-experience" class="digital-cv-section">
+        <h2>
+          <img
+            alt="moustache-man-icon"
+            src="/public/assets/icons/moustache-man-icon.png"
+            id="experience"
+            class="section-icons"
+          />
+          Experience
+        </h2>
+      </section>
+      <section id="digital-cv-section-contact-me" class="digital-cv-section">
+        <h2 class="section-heading">
+          <img
+            alt="moustache-man-icon"
+            src="/public/assets/icons/moustache-man-icon.png"
+            id="contact-me-icon"
+            class="section-icons"
+          />
+          Contact Me
+        </h2>
+
+        <section
+          id="digital-cv-section-socials"
+          class="digital-cv-contact-section"
+        >
           <ul>
             <li><address>Address</address></li>
             <li><Email>email icon</Email></li>
@@ -52,61 +193,68 @@
           </ul>
         </section>
 
-        <form
-          id="contact-me-form"
-          method="POST"
-          action="/digital-cv/new_visitor_post"
-        >
-          <label for="firstName">First Name:</label>
-          <input
-            pattern="[a-zA-Z]{2,256}$"
-            title="FirstName: Must be filled, only one name allowed."
-            type="text"
-            id="firstName"
-            name="firstName"
-            required
-            placeholder="Enter Your Name"
-          /><br />
-          <label for="lastName">Last Name:</label>
-          <input
-            pattern="[a-zA-Z]{2,256}$"
-            title="Last Name: Must be filled, only one surname allowed."
-            type="text"
-            id="lastName"
-            name="lastName"
-            required
-            placeholder="Enter Your Last Name"
-          /><br />
-          <label for="emailAddress">Email:</label>
-          <input
-            pattern="[A-Za-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,320}$"
-            title="Email: Must be in the following order: 'characters@characters.domain'"
-            type="email"
-            id="emailAddress"
-            name="emailAddress"
-            required
-            placeholder="Enter Your Email Address"
-          /><br />
-          <label for="message">Message:</label>
-          <textarea
-            name="message"
-            rows="5"
-            cols="30"
-            placeholder="Please write your message here. (optional)"
-            maxlength="256"
-            title="Message: May not be empty, and can not exceed 256 characters."
-          ></textarea
-          ><br />
-          <input type="submit" value="Submit" id="visitorSubmitButton" />
-          <input
-            type="button"
-            value="Clear Fields"
-            id="visitorClearFieldsButton"
-          />
-        </form>
+        <section id="info-processing-section">Info processing section</section>
+        <section id="form-section">
+          <h2 id="processing-info">Processing...</h2>
+          <h2 id="success-message">Form submitted successfully!</h2>
+          <form id="contact-me-form" action="/new_visitor_post" method="POST">
+            <label for="firstName">First Name:</label>
+            <input
+              pattern="[a-zA-Z]{2,256}$"
+              title="FirstName: Must be filled, only one name allowed."
+              type="text"
+              id="firstName"
+              name="firstName"
+              required
+              placeholder="Enter Your Name"
+            /><br />
+            <label for="lastName">Last Name:</label>
+            <input
+              pattern="[a-zA-Z]{2,256}$"
+              title="Last Name: Must be filled, only one surname allowed."
+              type="text"
+              id="lastName"
+              name="lastName"
+              required
+              placeholder="Enter Your Last Name"
+            /><br />
+            <label for="emailAddress">Email:</label>
+            <input
+              pattern="[A-Za-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,320}$"
+              title="Email: Must be in the following order: 'characters@characters.domain'"
+              type="email"
+              id="emailAddress"
+              name="emailAddress"
+              required
+              placeholder="Enter Your Email Address"
+            /><br />
+            <label for="message">Message:</label>
+            <textarea
+              name="message"
+              rows="5"
+              cols="30"
+              placeholder="Please write your message here. (optional)"
+              maxlength="256"
+              title="Message: May not be empty, and can not exceed 256 characters."
+            ></textarea
+            ><br />
+            <input
+              type="submit"
+              id="visitorSubmitButton"
+              value="Submit"
+              class="buttons"
+            />
+            <input
+              type="button"
+              value="Clear Fields"
+              id="visitorClearFieldsButton"
+              class="buttons"
+            />
+          </form>
+        </section>
       </section>
     </main>
   </body>
-
-  <script src="/static/js/index.js"></script>
+  <script src="./jquery-3.6.3.min.js"></script>
+  <script src="/js/index.js"></script>
 </html>

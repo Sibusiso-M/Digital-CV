@@ -12,13 +12,10 @@ body {
     flex: 1;
     background-color: rgb(194, 172, 172);
     color: white;
-    border: 5px solid gray;
-    padding: 0 20px 20px 20px;
+    border: 2px solid #FEFFFF;
 }
 
 @media (max-width : 768px) {
-
-    /* CSS rules */
     p {
         font-size: 16px;
         line-height: 2;
@@ -95,7 +92,7 @@ body {
         background-color: rgb(104, 186, 100);
     }
 
-    #digital-cv-contact-section ul {
+    #digital-cv-section-socials ul {
         background-color: rgb(240, 144, 202);
         text-decoration: none;
         list-style-type: none;
@@ -110,4 +107,203 @@ body {
         resize: none;
     }
 
+    #info-processing-section {
+        background-color: rgb(222, 35, 35);
+        width: 100%;
+        height: 150px;
+        display: none;
+
+    }
+
+    #form-section {
+        background-color: rgb(18, 45, 54);
+    }
+
+    #processing-info {
+        display: none;
+    }
+
+    #success-message {
+        display: none;
+    }
+
+    section h2 {
+        text-align: start;
+        text-decoration-line: underline;
+        text-decoration-style: dotted;
+        text-decoration-color: #17252A;
+    }
+
+
+
+    #skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .buttons {
+        background-color: #17252A;
+        color: #FEFFFF;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border: none;
+        border-radius: 12px;
+    }
+
+    #about-me-icon {}
+
+    .section-icons {
+        background-color: #3AAFA9;
+        width: 10%;
+        height: 10%;
+    }
+
+    .digital-cv-section h2 {
+        background-color: #b3d1cf;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    #skill-tags {
+        display: flex;
+        align-items: center;
+        padding: 2px;
+        margin: 10px;
+    }
+
+
+    .skill {
+        display: flex;
+        align-items: center;
+        padding: 2px;
+        border-radius: 2px;
+        background-color: #f2f2f2;
+        flex-direction: row;
+    }
+
+    .skill i {
+        margin-right: 5px;
+    }
+
+    .javascript {
+        color: #f0db4f;
+        -webkit-text-stroke: 0.5px #000;
+    }
+
+    .html5 {
+        color: #e44d26;
+    }
+
+    .css3 {
+        color: #264de4;
+    }
+
+    .mysql {
+        color: #4479a1;
+    }
+
+    .postgresql {
+        color: #336791;
+    }
+
+    .php {
+        color: #8892bf;
+    }
+
+    .api {
+        color: #6c757d;
+    }
+
+    .apache {
+        color: #d22128;
+    }
+
+    .python {
+        color: #3776ab;
+    }
+
+    .git {
+        color: #f34f29;
+    }
+
+    .nodejs {
+        color: #68a063;
+    }
+
+    .docker {
+        color: #2496ed;
+    }
+
+    .jasmine {
+        color: #8a4182;
+    }
+
+    .wordpress {
+        color: #21759b;
+    }
+
+    .oop {
+        color: #f7df1e;
+        -webkit-text-stroke: 0.5px #000;
+    }
+
+    .react {
+        color: #61dafb;
+    }
+
+    .redux {
+        color: #764abc;
+    }
+
+    .react-native {
+        color: #61dafb;
+    }
+
+    .figma {
+        color: #f24e1e;
+    }
+
+    .rest-api {
+        color: #6c757d;
+    }
+
+    #hobbies-information {
+        background-color: orange;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .hobby-information-block {
+        background-color: rgb(159, 152, 139);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%
+    }
+
+
+}
+
+
+#digital-cv-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    transition: top 0.3s;
+    z-index: 1;
+}
+
+#digital-cv-nav.hide {
+    top: -45px;
 }

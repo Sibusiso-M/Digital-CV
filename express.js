@@ -12,13 +12,17 @@ const { createTable } = require("./src/js/new-visitor");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static("."));
 app.use(express.static(path.join(__dirname)));
-app.use("", express.static(path.join(__dirname, "public")));
-app.use("/static", express.static(path.join(__dirname, "src")));
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "src")));
 app.use(express.json());
 
-app.use("/digital-cv", digitalCV);
-app.use("/digital-cv", administrator);
+app.set("view engine", "pug");
+app.set("views", path.join(__dirname, "./views"));
+
+app.use("", digitalCV);
+app.use("", administrator);
 
 app.get("*", (request, response) => {
   response.status(404).send("Sorry page not found.");

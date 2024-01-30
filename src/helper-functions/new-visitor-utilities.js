@@ -15,7 +15,7 @@ const validateLastName = (name) => {
 };
 
 const validateEmail = (emailAddress) => {
-  const pattern = /[A-Za-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,320}$/;
+  const pattern = /[A-Za-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/i;
 
   if (!pattern.test(emailAddress)) {
     throw new Error(

@@ -5,6 +5,7 @@ const path = require("path");
 const publicPath = path.join(__dirname, "./../../public");
 
 const { addANewVisitor } = require("../js/new-visitor");
+
 const {
   validateFirstName,
   validateLastName,
@@ -48,14 +49,11 @@ router.post("/new_visitor_post", async (request, response) => {
   })
     .then((result) => {
       const row = result[0];
-      response.status(201).send({
-        success: "true",
-        message: "stored contact (visitor) successfully",
-        result: row,
-      });
+      response.locals.row = row;
+      response.render("/thank_you", {row});
     })
     .catch((error) => {
-      response.status(500).send({
+      response.status(500).json({
         success: false,
         message: "Failed to create contact (visitor)",
         error: error.message,
