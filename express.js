@@ -28,7 +28,7 @@ app.get("*", (request, response) => {
   response.status(404).send("Sorry page not found.");
 });
 
-createTable();
+// createTable();
 app.listen(port, () => {
   console.log(`Server listening on port http://localhost:${port}`);
 });
