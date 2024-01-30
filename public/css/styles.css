@@ -301,6 +301,33 @@ body {
     }
 
 
+    #qulification-list {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+
+    #qulification-list li section h3 {
+        text-decoration: underline;
+    }
+
+    #qulification-list li section section {
+        display: flex;
+        align-items: baseline;
+    }
+
+    #qulification-list li section h4 {
+        margin-left: 10px;
+    }
+
+    #qulification-list li section h5 {
+        font-weight: bold;
+    }
+
+    #qulification-list li section span {
+        font-weight: bold;
+    }
+
+
 
 }
 
