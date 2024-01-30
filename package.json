@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm install",
-    "start": "nodemon express.js",
+    "start": "node express.js",
     "test": ""
   },
   "keywords": [],
