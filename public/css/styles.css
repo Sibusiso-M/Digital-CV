@@ -158,8 +158,9 @@ body {
 
     .section-icons {
         background-color: #3AAFA9;
-        width: 10%;
-        height: 10%;
+        width: 12%;
+        height: 12%;
+
     }
 
     .digital-cv-section h2 {
@@ -169,6 +170,7 @@ body {
         flex-direction: row;
         justify-content: flex-start;
         flex-wrap: wrap;
+        padding: 5px;
     }
 
     #skill-tags {
@@ -297,6 +299,8 @@ body {
         width: 3rem;
         height: 3rem;
     }
+
+
 
 }
 
