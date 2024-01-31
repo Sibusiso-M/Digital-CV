@@ -3,7 +3,6 @@ const app = express();
 const port = 3000;
 
 const digitalCV = require("./src/routes/digital-cv");
-const administrator = require("./src/routes/administrator");
 
 const path = require("path");
 
@@ -22,7 +21,6 @@ app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "./views"));
 
 app.use("", digitalCV);
-app.use("", administrator);
 
 app.get("*", (request, response) => {
   response.status(404).send("Sorry page not found.");
