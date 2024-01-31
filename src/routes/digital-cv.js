@@ -49,8 +49,14 @@ router.post("/new_visitor_post", async (request, response) => {
   })
     .then((result) => {
       const row = result[0];
-      response.locals.row = row;
-      response.render("/thank_you", {row});
+      // response.locals.row = row;
+      // response.render("/thank_you", {row});
+      const message = {
+        success: true,
+        data: JSON.stringify(result),
+      };
+
+      response.status(201).send(message);
     })
     .catch((error) => {
       response.status(500).json({

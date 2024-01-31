@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon express.js",
+    "build": "webpack",
+    "start": "node dist/bundle.js",
     "test": ""
   },
   "keywords": [],
@@ -19,6 +20,8 @@
     "pug": "^3.0.2"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "webpack": "^5.90.0",
+    "webpack-cli": "^5.1.4"
   }
 }
