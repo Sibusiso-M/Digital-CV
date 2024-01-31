@@ -90,21 +90,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const digitalCVMenu = document.getElementById("digital-cv-nav");
 
-  const digitalCVMenuHeight = digitalCVMenu.offsetHeight;
+  let digitalCVMenuHeight = digitalCVMenu.offsetHeight;
 
   let lastScrollY = window.scrollY;
 
-  window.onscroll = function () {
-    const currentScrollY = window.scrollY;
+  // window.onscroll = function () {
+  //   const currentScrollY = window.scrollY;
 
-    if (lastScrollY < currentScrollY) {
-      digitalCVMenu.classList.add("hide");
-    } else {
-      digitalCVMenu.classList.remove("hide");
-    }
+  //   if (lastScrollY < currentScrollY && currentScrollY > digitalCVMenuHeight) {
+  //     digitalCVMenu.classList.add("hide");
+  //     // digitalCVBody.style.top = -digitalCVMenuHeight;
+  //   } else {
+  //     digitalCVMenu.classList.remove("hide");
+  //   }
 
-    lastScrollY = currentScrollY;
-  };
+  //   lastScrollY = currentScrollY;
+  // };
 
   const digitalCVBody = document.getElementById("digital-cv-body");
   digitalCVBody.style.position = "relative";
