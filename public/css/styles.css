@@ -159,6 +159,7 @@ textarea {
     padding-bottom: 1rem;
     padding-left: 1rem;
     background-color: var(--text-color);
+    margin-top: 1rem;
 }
 
 #digital-cv-section-socials h3 {
@@ -451,6 +452,12 @@ a.social-link-icons:active {
     background-color: var(--secondary-color);
 }
 
+#contact-me-form input[type="submit"],
+#contact-me-form input[type="button"] {
+    border: 2px solid var(--text-color);
+
+}
+
 #form-section {
     background-color: rgb(18, 45, 54);
     display: flex;
@@ -565,6 +572,8 @@ a.social-link-icons:active {
         padding-bottom: 1rem;
         padding-left: 1rem;
         background-color: var(--text-color);
+        margin-top: 1rem;
+
     }
 
     #digital-cv-section-socials h3 {
