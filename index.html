@@ -217,6 +217,7 @@
           class="digital-cv-section"
         >
           <form id="contact-me-form" action="/submit" method="POST">
+            <section id="successMessage"></section>
             <label for="firstName" id="contact-me-form-first-name-label"
               >First Name</label
             >
@@ -257,12 +258,14 @@
               placeholder="Please write your message here. (optional)"
               maxlength="256"
               title="Message: May not be empty, and can not exceed 256 characters."
-              id="messageArea"
+              id="message"
             ></textarea>
-            <button type="button" id="visitorSubmitButton" class="buttons">
-              Submit
-            </button>
-
+            <input
+              type="submit"
+              id="visitorSubmitButton"
+              class="buttons"
+              value="Submit"
+            />
             <input
               type="button"
               value="Clear Fields"
@@ -270,9 +273,6 @@
               class="buttons"
             />
           </form>
-          <section id="successMessage" style="display: none">
-            Data inserted successfully!
-          </section>
         </section>
 
         <section id="digital-cv-section-socials" class="digital-cv-section">
@@ -331,41 +331,5 @@
     </main>
   </body>
   <script src="./jquery-3.6.3.min.js"></script>
-  <script src="/src/js/index.js"></script>
-  <!-- <script src="/src/js/index.js">
-    function submitForm() {
-      const currentDateAndTime = new Date();
-
-      const year = currentDateAndTime.getFullYear();
-      const month = currentDateAndTime.getMonth() + 1;
-      const day = currentDateAndTime.getDate();
-
-      const hours = currentDateAndTime.getHours();
-      const minutes = currentDateAndTime.getMinutes();
-      const seconds = currentDateAndTime.getSeconds();
-      const dateOfVisit = `${year}-${month}-${day}`;
-      const timeOfVisit = `${hours}:${minutes}:${seconds}`;
-
-      // validateFirstName(firstName);
-      // validateLastName(lastName);
-      // validateEmail(emailAddress);
-
-      var form = document.getElementById("myForm");
-      var formData = new FormData(form);
-      formData.dateOfVisit = dateOfVisit;
-      formData.timeOfVisit = timeOfVisit;
-
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "/submit", true);
-      xhr.onload = function () {
-        if (xhr.status == 200) {
-          document.getElementById("successMessage").style.display = "block";
-        } else {
-          console.error("Error submitting form");
-        }
-      };
-
-      xhr.send(formData);
-    }
-  </script> -->
+  <script src="/index.js"></script>
 </html>
