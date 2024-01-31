@@ -215,6 +215,20 @@ section h2 {
     margin: 4px 2px;
     border: none;
     border-radius: 12px;
+
+}
+
+.buttons:hover {
+    background-color: var(--secondary-color);
+    color: #FEFFFF;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border: none;
+    border-radius: 12px;
 }
 
 #skill-tags {
@@ -239,7 +253,7 @@ section h2 {
 #about-me-text {
     margin-top: 1rem;
     margin-bottom: 1rem;
-
+    text-align: center;
 }
 
 .skill i {
@@ -424,7 +438,7 @@ a.social-link-icons:active {
 #contact-me-form {
     display: flex;
     flex-direction: column;
-    width: 80vw;
+    width: 80%;
     border-radius: 1rem;
     margin-top: 1rem;
 }
@@ -455,7 +469,6 @@ a.social-link-icons:active {
 #contact-me-form input[type="submit"],
 #contact-me-form input[type="button"] {
     border: 2px solid var(--text-color);
-
 }
 
 #form-section {
@@ -469,22 +482,42 @@ a.social-link-icons:active {
     width: 80vw;
 }
 
+#successMessage {
+    background-color: orange;
+    padding: 0.5rem;
+}
 
 @media (max-width : 768px) {
-    p {
-        font-size: 16px;
-        line-height: 1.2;
-    }
-
     #digital-cv-body {
         background-color: var(--text-color);
         text-decoration: none;
+    }
+
+    #digital-cv-nav {
+        background-color: var(--primary-color);
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 0;
+        width: 100%;
+        transition: top 0.3s;
+        z-index: 1;
+        padding: 1rem;
     }
 
     #digital-cv-nav ul {
         text-decoration: none;
         list-style-type: none;
         text-align: center;
+        flex-direction: column;
+    }
+
+    #digital-cv-nav ul.close {
+        display: none;
+    }
+
+    #digital-cv-nav ul.open {
+        display: flex;
     }
 
     #digital-cv-nav ul li {
@@ -552,6 +585,11 @@ a.social-link-icons:active {
 
     #nav-menu {
         margin: 1px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.2;
     }
 
     #digital-cv-contact-section h2 {
