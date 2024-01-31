@@ -85,6 +85,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (data.success) {
           successMessage.style.display = "flex";
+          setTimeout(() => {
+            successMessage.style.display = "none";
+          }, 4000);
         } else {
           successMessage.innerHTML =
             "❌ Form submission failed, please try again.";
