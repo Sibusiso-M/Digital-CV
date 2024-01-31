@@ -21,6 +21,7 @@
 body {
     flex: 1;
     border: 2px solid #FEFFFF;
+    border-radius: 2px;
 }
 
 @media (max-width : 768px) {
@@ -210,7 +211,6 @@ body {
     }
 
     .digital-cv-section {
-        /* background-color: var(--primary-color); */
         color: var(--primary-color);
         align-items: center;
         flex-direction: row;
@@ -353,7 +353,7 @@ body {
         list-style-type: disc;
         display: flex;
         flex-direction: column;
-        padding: 1.5rem
+        padding: 1.5rem;
     }
 
     #qualifications-list li section h3 {
@@ -362,7 +362,13 @@ body {
 
     .institution {
         display: flex;
-        justify-content: center;
+        align-items: center;
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .institution h4 {
+        text-align: left;
     }
 
     .duration {
@@ -370,10 +376,39 @@ body {
         font-style: italic;
     }
 
-    .social-icons li {
-        background-color: #17252A;
-        margin-left: 20px;
+    .social-icons {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        text-decoration: none;
+        color: var(--primary-color);
     }
+
+    .social-icons-item {
+        margin-right: 20px;
+    }
+
+    a.social-link-icons {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .social-icons li {
+        padding: 1rem;
+    }
+
+    .social-link-icon-image {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    a.social-link-icons:active {
+        color: black;
+      }
 
 }
 
