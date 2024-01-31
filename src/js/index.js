@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+  let firstName = document.getElementById("firstName");
+  let lastName = document.getElementById("lastName");
+  let emailAddress = document.getElementById("emailAddress");
+  let messageArea = document.getElementById("messageArea");
+
   const hamburgerBar = document.getElementById("hamburger-bar");
   const hamburgerBarCross = document.getElementById("hamburger-bar-cross");
   const navMenu = document.getElementById("nav-menu");
@@ -36,11 +41,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const visitorSubmitButton = document.getElementById("visitorSubmitButton");
 
-  visitorSubmitButton.onclick = () => {
-    // showInfoProcessingSection();
-    // hideFormSection();
-    // postData();
-  };
+  visitorSubmitButton.addEventListener("click", () => {
+    alert("here");
+    submitForm();
+  });
+
+  function submitForm() {
+    const currentDateAndTime = new Date();
+
+    const year = currentDateAndTime.getFullYear();
+    const month = currentDateAndTime.getMonth() + 1;
+    const day = currentDateAndTime.getDate();
+
+    const hours = currentDateAndTime.getHours();
+    const minutes = currentDateAndTime.getMinutes();
+    const seconds = currentDateAndTime.getSeconds();
+    const dateOfVisit = `${year}-${month}-${day}`;
+    const timeOfVisit = `${hours}:${minutes}:${seconds}`;
+
+    // validateFirstName(firstName);
+    // validateLastName(lastName);
+    // validateEmail(emailAddress);
+    var form = document.getElementById("contact-me-form");
+    (firstName = firstName.value), console.log(firstName);
+
+    const formData = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      dateOfVisit: dateOfVisit,
+      timeOfVisit: timeOfVisit,
+    };
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/submit", true);
+    xhr.setRequestHeader("Content-Type", "application/json"); // Set the content type to JSON
+
+    xhr.onload = function () {
+      if (xhr.status == 200) {
+        document.getElementById("successMessage").style.display = "block";
+      } else {
+        console.error("Error submitting form");
+      }
+    };
+
+    xhr.send(JSON.stringify(formData.data));
+  }
 
   const showInfoProcessingSection = () => {
     document.getElementById("info-processing-section").style.display = "flex";
@@ -113,14 +158,9 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   visitorClearFieldsButton.onclick = () => {
-    const firstName = document.getElementById("firstName");
-    const lastName = document.getElementById("lastName");
-    const emailAddress = document.getElementById("emailAddress");
-    const messageArea = document.getElementById("messageArea");
-
-    firstName.value = "";
-    lastName.value = "";
-    emailAddress.value = "";
-    messageArea.value = "";
+    firstName = "";
+    lastName = "";
+    emailAddress = "";
+    messageArea = "";
   };
 });

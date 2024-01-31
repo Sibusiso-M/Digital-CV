@@ -20,24 +20,32 @@ const sendFileHandler = (fileName) => (request, response) => {
 
 router.get("/", sendFileHandler("index.html"));
 
-router.post("/new_visitor_post", async (request, response) => {
-  const { firstName, lastName, message, emailAddress } = request.body;
+router.post("/submit", async (request, response) => {
+  const {
+    firstName,
+    lastName,
+    message,
+    emailAddress,
+    dateOfVisit,
+    timeOfVisit,
+  } = request.body;
 
-  const currentDateAndTime = new Date();
 
-  const year = currentDateAndTime.getFullYear();
-  const month = currentDateAndTime.getMonth() + 1;
-  const day = currentDateAndTime.getDate();
+  // const currentDateAndTime = new Date();
 
-  const hours = currentDateAndTime.getHours();
-  const minutes = currentDateAndTime.getMinutes();
-  const seconds = currentDateAndTime.getSeconds();
-  const dateOfVisit = `${year}-${month}-${day}`;
-  const timeOfVisit = `${hours}:${minutes}:${seconds}`;
+  // const year = currentDateAndTime.getFullYear();
+  // const month = currentDateAndTime.getMonth() + 1;
+  // const day = currentDateAndTime.getDate();
 
-  validateFirstName(firstName);
-  validateLastName(lastName);
-  validateEmail(emailAddress);
+  // const hours = currentDateAndTime.getHours();
+  // const minutes = currentDateAndTime.getMinutes();
+  // const seconds = currentDateAndTime.getSeconds();
+  // const dateOfVisit = `${year}-${month}-${day}`;
+  // const timeOfVisit = `${hours}:${minutes}:${seconds}`;
+
+  // validateFirstName(firstName);
+  // validateLastName(lastName);
+  // validateEmail(emailAddress);
 
   await addANewVisitor({
     firstName,
@@ -48,15 +56,16 @@ router.post("/new_visitor_post", async (request, response) => {
     emailAddress,
   })
     .then((result) => {
-      const row = result[0];
+      // const row = result[0];
       // response.locals.row = row;
       // response.render("/thank_you", {row});
-      const message = {
-        success: true,
-        data: JSON.stringify(result),
-      };
+      // const message = {
+      //   success: true,
+      //   data: JSON.stringify(result),
+      // };
 
-      response.status(201).send(message);
+      // response.status(201).send(message);
+      response.status(200).send("Data inserted successfully");
     })
     .catch((error) => {
       response.status(500).json({

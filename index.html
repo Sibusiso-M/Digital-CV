@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./css/styles.css" rel="stylesheet" />
+    <link href="./public//css/styles.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -216,7 +216,7 @@
           id="digital-cv-contact-section"
           class="digital-cv-section"
         >
-          <form id="contact-me-form" action="/new_visitor_post" method="POST">
+          <form id="contact-me-form" action="/submit" method="POST">
             <label for="firstName" id="contact-me-form-first-name-label"
               >First Name</label
             >
@@ -259,12 +259,10 @@
               title="Message: May not be empty, and can not exceed 256 characters."
               id="messageArea"
             ></textarea>
-            <input
-              type="submit"
-              id="visitorSubmitButton"
-              value="Submit"
-              class="buttons"
-            />
+            <button type="button" id="visitorSubmitButton" class="buttons">
+              Submit
+            </button>
+
             <input
               type="button"
               value="Clear Fields"
@@ -272,6 +270,9 @@
               class="buttons"
             />
           </form>
+          <section id="successMessage" style="display: none">
+            Data inserted successfully!
+          </section>
         </section>
 
         <section id="digital-cv-section-socials" class="digital-cv-section">
@@ -331,4 +332,40 @@
   </body>
   <script src="./jquery-3.6.3.min.js"></script>
   <script src="/src/js/index.js"></script>
+  <!-- <script src="/src/js/index.js">
+    function submitForm() {
+      const currentDateAndTime = new Date();
+
+      const year = currentDateAndTime.getFullYear();
+      const month = currentDateAndTime.getMonth() + 1;
+      const day = currentDateAndTime.getDate();
+
+      const hours = currentDateAndTime.getHours();
+      const minutes = currentDateAndTime.getMinutes();
+      const seconds = currentDateAndTime.getSeconds();
+      const dateOfVisit = `${year}-${month}-${day}`;
+      const timeOfVisit = `${hours}:${minutes}:${seconds}`;
+
+      // validateFirstName(firstName);
+      // validateLastName(lastName);
+      // validateEmail(emailAddress);
+
+      var form = document.getElementById("myForm");
+      var formData = new FormData(form);
+      formData.dateOfVisit = dateOfVisit;
+      formData.timeOfVisit = timeOfVisit;
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/submit", true);
+      xhr.onload = function () {
+        if (xhr.status == 200) {
+          document.getElementById("successMessage").style.display = "block";
+        } else {
+          console.error("Error submitting form");
+        }
+      };
+
+      xhr.send(formData);
+    }
+  </script> -->
 </html>
