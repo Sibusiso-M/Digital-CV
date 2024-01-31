@@ -84,15 +84,17 @@ document.addEventListener("DOMContentLoaded", function () {
         ).style.display = "flex");
 
         if (data.success) {
-          successMessage.style.display = "flex";
-          setTimeout(() => {
-            successMessage.style.display = "none";
-          }, 4000);
+          successMessage.innerHTML =
+            "Form submitted successfully!⚡ We will be in touch. 🤝🏼";
         } else {
           successMessage.innerHTML =
             "❌ Form submission failed, please try again.";
           console.error(`Form submission failed: ${data.message}`);
         }
+
+        setTimeout(() => {
+          successMessage.innerHTML = "";
+        }, 4000);
       })
       .catch((error) => {
         console.error(`Contact Form submission failed: ${error}`);
