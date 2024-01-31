@@ -54,10 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("form-section").style.display = "flex";
   };
 
-  const visitorClearFieldsButton = document.getElementById(
-    "visitorClearFieldsButton"
-  );
-
   function scrollToSection(event, sectionId) {
     event.preventDefault();
     const navHeight = document.querySelector("nav-menu").offsetHeight;
@@ -111,4 +107,20 @@ document.addEventListener("DOMContentLoaded", function () {
   digitalCVBody.style.position = "relative";
 
   digitalCVBody.style.top = digitalCVMenuHeight + "px";
+
+  const visitorClearFieldsButton = document.getElementById(
+    "visitorClearFieldsButton"
+  );
+
+  visitorClearFieldsButton.onclick = () => {
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const emailAddress = document.getElementById("emailAddress");
+    const messageArea = document.getElementById("messageArea");
+
+    firstName.value = "";
+    lastName.value = "";
+    emailAddress.value = "";
+    messageArea.value = "";
+  };
 });
