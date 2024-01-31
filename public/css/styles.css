@@ -108,12 +108,6 @@ body {
         margin: 1px;
     }
 
-    #contact-me-form {
-        background-color: rgb(187, 221, 255);
-        display: flex;
-        flex-direction: column;
-    }
-
     #digital-cv-contact-section h2 {
         background-color: rgb(104, 186, 100);
     }
@@ -150,10 +144,6 @@ body {
         height: 150px;
         display: none;
 
-    }
-
-    #form-section {
-        background-color: rgb(18, 45, 54);
     }
 
     #processing-info {
@@ -408,7 +398,49 @@ body {
 
     a.social-link-icons:active {
         color: black;
-      }
+    }
+
+    #contact-me-form {
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        border-radius: 1rem;
+        margin-top: 1rem;
+    }
+
+    #contact-me-form label {
+        background-color: var(--primary-color);
+        padding: 1rem 1rem 1rem 1rem;
+        color: var(--text-color);
+    }
+
+    #contact-me-form-first-name-label {
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    #contact-me-form input[type="text"],
+    #contact-me-form input[type="email"],
+    #contact-me-form textarea {
+        background-color: var(--text-color);
+        padding: 1rem 1rem 1rem 1rem;
+        color: var(--primary-color);
+    }
+
+    #contact-me-form input[type="submit"]:hover,
+    #contact-me-form input[type="button"]:hover {
+        background-color:var(--secondary-color);
+    }
+
+    #form-section {
+        background-color: rgb(18, 45, 54);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #form-header {
+        width: 80vw;
+    }
 
 }
 

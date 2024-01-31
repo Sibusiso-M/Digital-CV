@@ -234,7 +234,12 @@
                 class="social-link-icons"
                 aria-label="GitHub"
               >
-                <img src="public/assets/icons/github-mobile-icon.png" alt="GitHub" class="social-link-icon-image" /> GitHub
+                <img
+                  src="public/assets/icons/github-mobile-icon.png"
+                  alt="GitHub"
+                  class="social-link-icon-image"
+                />
+                GitHub
               </a>
             </li>
             <li>
@@ -245,7 +250,13 @@
                 class="social-link-icons"
                 aria-label="LinkedIn"
               >
-              <img src="public/assets/icons/linkedin-icon-mobile.png" alt="LinkedIn" class="social-link-icon-image" id="linkedIn-icon"> LinkedIn
+                <img
+                  src="public/assets/icons/linkedin-icon-mobile.png"
+                  alt="LinkedIn"
+                  class="social-link-icon-image"
+                  id="linkedIn-icon"
+                />
+                LinkedIn
               </a>
             </li>
           </ul>
@@ -256,8 +267,12 @@
           id="digital-cv-contact-section"
           class="digital-cv-section"
         >
+          <section id="form-header">
+            <h2>Please Fill In your details so I may get in touch with you.</h2>
+          </section>
+
           <form id="contact-me-form" action="/new_visitor_post" method="POST">
-            <label for="firstName">First Name:</label>
+            <label for="firstName" id="contact-me-form-first-name-label">First Name</label>
             <input
               pattern="[a-zA-Z]{2,256}$"
               title="FirstName: Must be filled, only one name allowed."
@@ -266,8 +281,8 @@
               name="firstName"
               required
               placeholder="Enter Your Name"
-            /><br />
-            <label for="lastName">Last Name:</label>
+            />
+            <label for="lastName">Last Name</label>
             <input
               pattern="[a-zA-Z]{2,256}$"
               title="Last Name: Must be filled, only one surname allowed."
@@ -276,8 +291,8 @@
               name="lastName"
               required
               placeholder="Enter Your Last Name"
-            /><br />
-            <label for="emailAddress">Email:</label>
+            />
+            <label for="emailAddress">Email</label>
             <input
               pattern="[A-Za-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,320}$"
               title="Email: Must be in the following order: 'characters@characters.domain'"
@@ -286,8 +301,8 @@
               name="emailAddress"
               required
               placeholder="Enter Your Email Address"
-            /><br />
-            <label for="message">Message:</label>
+            />
+            <label for="message">Message</label>
             <textarea
               name="message"
               rows="5"
@@ -296,7 +311,7 @@
               maxlength="256"
               title="Message: May not be empty, and can not exceed 256 characters."
             ></textarea
-            ><br />
+            >
             <input
               type="submit"
               id="visitorSubmitButton"
