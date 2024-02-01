@@ -32,7 +32,7 @@ router.post("/submit", async (request, response) => {
 
   validateFirstName(firstName);
   validateLastName(lastName);
-  validateEmail(emailAddress);`
+  validateEmail(emailAddress);
 
   await addANewVisitor({
     firstName,
