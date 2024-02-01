@@ -5,5 +5,4 @@ const visitorQueries = {
     "INSERT INTO visitors(firstName, lastName, dateOfVisit, timeOfVisit, emailAddress, message) VALUES($1,$2,$3,$4,$5,$6) RETURNING *",
 };
 
-
-module.exports = { databaseQuery, visitorQueries };
+module.exports = { visitorQueries };
