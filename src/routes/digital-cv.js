@@ -18,9 +18,9 @@ const sendFileHandler = (fileName) => (request, response) => {
   response.sendFile(fileName, { root: publicPath });
 };
 
-router.get("/", sendFileHandler("index.html"));
+router.get("/", sendFileHandler("https://sibusiso-mdlovu.onrender.com"));
 
-router.post("/submit", async (request, response) => {
+router.post("https://sibusiso-mdlovu.onrender.com/submit", async (request, response) => {
   const {
     firstName,
     lastName,
