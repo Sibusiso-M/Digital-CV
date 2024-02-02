@@ -4,7 +4,7 @@ const path = require("path");
 
 const publicPath = path.join(__dirname, "../../index.html");
 
-const { addANewVisitor } = require("../js/new-visitor");
+const VisitorsModel = require("../../model/visitorModel.js");
 
 const {
   validateFirstName,
@@ -34,29 +34,28 @@ router.post("/submit", async (request, response) => {
   validateLastName(lastName);
   validateEmail(emailAddress);
 
-  await addANewVisitor({
+  const visitor = new VisitorsModel({
     firstName,
     lastName,
-    dateOfVisit,
-    timeOfVisit,
     message,
     emailAddress,
-  })
-    .then((result) => {
-      const message = {
-        success: true,
-        data: JSON.stringify(result),
-      };
+    dateOfVisit,
+    timeOfVisit,
+  });
 
-      response.status(201).json(message);
-    })
-    .catch((error) => {
-      response.status(500).json({
-        success: false,
-        message: "Failed to create contact (visitor)",
-        error: error.message,
-      });
+  try {
+    await visitor.save();
+
+    response.status(201).json({
+      success: true,
+      message: "Form submission successful",
     });
+  } catch (error) {
+    response.status(400).json({
+      success: false,
+      message: `Form submit unsuccessful ${error.message}`,
+    });
+  }
 });
 
 module.exports = router;
