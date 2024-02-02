@@ -56,10 +56,6 @@ async function submitForm() {
   const dateOfVisit = `${year}-${month}-${day}`;
   const timeOfVisit = `${hours}:${minutes}:${seconds}`;
   
-  validateFirstName(firstName);
-  validateLastName(lastName);
-  validateEmail(emailAddress);
-  
   const formData = {
     firstName: document.getElementById("firstName").value,
     lastName: document.getElementById("lastName").value,
@@ -68,28 +64,6 @@ async function submitForm() {
     timeOfVisit: timeOfVisit,
   };
 
-  const visitor = new VisitorsModel({
-    firstName,
-    lastName,
-    message,
-    emailAddress,
-    dateOfVisit,
-    timeOfVisit,
-  });
-
-  try {
-    await visitor.save();
-
-    response.status(201).json({
-      success: true,
-      message: "Form submission successful",
-    });
-  } catch (error) {
-    response.status(400).json({
-      success: false,
-      message: `Form submit unsuccessful ${error.message}`,
-    });
-  }
   fetch("https://sibusiso-mdlovu-digital-cv.netlify.app/submit", {
     method: "POST",
     headers: {
