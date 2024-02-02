@@ -44,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function submitForm() {
-    const firstName = document.getElementById("firstName").value;
-    const lastName = document.getElementById("lastName").value;
-    const emailAddress = document.getElementById("emailAddress").value;
-    const message = document.getElementById("message").value;
+    // const firstName = document.getElementById("firstName").value;
+    // const lastName = document.getElementById("lastName").value;
+    // const emailAddress = document.getElementById("emailAddress").value;
+    // const message = document.getElementById("message").value;
 
     const currentDateAndTime = new Date();
 
@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const formData = new FormData(document.querySelector("#contact-me-form"));
     formData.append("dateOfVisit", dateOfVisit);
     formData.append("timeOfVisit", timeOfVisit);
-
-    fetch("https://sibusiso-mdlovu-digital-cv.netlify.app/submit", {
+    console.log(formData, "form data");
+    fetch("/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
