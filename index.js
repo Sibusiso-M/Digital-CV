@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
     formData.append("dateOfVisit", dateOfVisit);
     formData.append("timeOfVisit", timeOfVisit);
     console.log(formData, "form data");
+    
     fetch("/", {
       method: "POST",
       headers: {
@@ -77,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const successMessage = (document.getElementById(
           "successMessage"
         ).style.display = "flex");
-        console.log("data sum");
         if (data.success) {
           successMessage.innerHTML =
             "Form submitted successfully!⚡ We will be in touch. 🤝🏼";
