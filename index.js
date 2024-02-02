@@ -71,7 +71,7 @@ async function submitForm() {
     },
     body: JSON.stringify(formData),
   })
-    .then((response) => response.json)
+    .then((response) => response.json())
     .then((data) => {
       const successMessage = (document.getElementById(
         "successMessage"
