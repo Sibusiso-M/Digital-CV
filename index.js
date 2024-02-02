@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         setTimeout(() => {
-          successMessage.innerHTML = "";
+          successMessage.innerHTML = null;
         }, 4000);
       })
       .catch((error) => {
