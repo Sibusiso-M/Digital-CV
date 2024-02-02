@@ -234,7 +234,7 @@ section h2 {
 #skill-tags {
     display: flex;
     align-items: center;
-    padding: 2px;
+    padding: 0.5rem;
     margin: 2rem;
 }
 
@@ -246,14 +246,19 @@ section h2 {
     border-radius: 2px;
     background-color: #f2f2f2;
     flex-direction: row;
-    margin: 5px;
-    font-size: 1.5rem;
+    margin: 1rem;
+    font-size: 2rem;
 }
 
 #about-me-text {
     margin-top: 1rem;
     margin-bottom: 1rem;
     text-align: center;
+}
+
+#about-me-text p {
+    font-size: 2rem;
+
 }
 
 .skill i {
@@ -351,6 +356,13 @@ section h2 {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+
+#hobbies-information h4{
+    display: flex;
+    /* font-size: 2rem; */
+}
+
 
 .hobby-information-block :hover {
     background-color: orange;
@@ -491,6 +503,11 @@ a.social-link-icons:active {
     #digital-cv-body {
         background-color: var(--text-color);
         text-decoration: none;
+    }
+
+    #about-me-text p {
+        font-size: 1rem;
+
     }
 
     #digital-cv-nav {

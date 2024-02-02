@@ -62,16 +62,16 @@ document.addEventListener("DOMContentLoaded", function () {
       emailAddress: document.getElementById("emailAddress").value,
       dateOfVisit: dateOfVisit,
       timeOfVisit: timeOfVisit,
-    }
+    };
 
-    fetch("/submit", {
+    fetch("https://sibusiso-mdlovu-digital-cv.netlify.app/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response)
+      .then((response) => response.json)
       .then((data) => {
         const successMessage = (document.getElementById(
           "successMessage"
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           successMessage.innerHTML =
             "❌ Form submission failed, please try again.";
-          console.error(`Form submission failed: ${data.message}`);
+          console.error(`Form submission failed: ${data}`);
         }
 
         setTimeout(() => {
