@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("submit", function (event) {
       event.preventDefault();
       submitForm();
-      // resetFormFields();
+      resetFormFields();
     });
 
   document.getElementById("successMessage").style.display = "none";
@@ -43,12 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  function submitForm() {
-    // const firstName = document.getElementById("firstName").value;
-    // const lastName = document.getElementById("lastName").value;
-    // const emailAddress = document.getElementById("emailAddress").value;
-    // const message = document.getElementById("message").value;
-
+  async function submitForm() {
     const currentDateAndTime = new Date();
 
     const year = currentDateAndTime.getFullYear();
@@ -61,19 +56,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const dateOfVisit = `${year}-${month}-${day}`;
     const timeOfVisit = `${hours}:${minutes}:${seconds}`;
 
-    const formData = new FormData(document.querySelector("#contact-me-form"));
-    formData.append("dateOfVisit", dateOfVisit);
-    formData.append("timeOfVisit", timeOfVisit);
-    console.log(formData, "form data");
-    
-    fetch("/", {
+    const formData = {
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      emailAddress: document.getElementById("emailAddress").value,
+      dateOfVisit: dateOfVisit,
+      timeOfVisit: timeOfVisit,
+    }
+
+    fetch("/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: Object.fromEntries(formData),
+      body: JSON.stringify(formData),
     })
-      .then((response) => response.json())
+      .then((response) => response)
       .then((data) => {
         const successMessage = (document.getElementById(
           "successMessage"
