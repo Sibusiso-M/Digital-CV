@@ -44,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function submitForm() {
-    firstName = document.getElementById("firstName").value;
-    lastName = document.getElementById("lastName").value;
-    emailAddress = document.getElementById("emailAddress").value;
-    message = document.getElementById("message").value;
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const emailAddress = document.getElementById("emailAddress");
+    const message = document.getElementById("message");
 
     const currentDateAndTime = new Date();
 
@@ -67,9 +67,13 @@ document.addEventListener("DOMContentLoaded", function () {
       emailAddress,
       message,
       dateOfVisit,
-      timeOfVisit,
+      timeOfVisit
     };
 
+    console.log("form submit fn");
+    console.log({
+      firstName
+    });
     fetch("/submit", {
       method: "POST",
       headers: {
@@ -82,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const successMessage = (document.getElementById(
           "successMessage"
         ).style.display = "flex");
-
+        console.log("data sum");
         if (data.success) {
           successMessage.innerHTML =
             "Form submitted successfully!⚡ We will be in touch. 🤝🏼";
@@ -104,21 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const digitalCVMenu = document.getElementById("digital-cv-nav");
 
   let digitalCVMenuHeight = digitalCVMenu.offsetHeight;
-
-  let lastScrollY = window.scrollY;
-
-  // window.onscroll = function () {
-  //   const currentScrollY = window.scrollY;
-
-  //   if (lastScrollY < currentScrollY && currentScrollY > digitalCVMenuHeight) {
-  //     digitalCVMenu.classList.add("hide");
-  //     // digitalCVBody.style.top = -digitalCVMenuHeight;
-  //   } else {
-  //     digitalCVMenu.classList.remove("hide");
-  //   }
-
-  //   lastScrollY = currentScrollY;
-  // };
 
   const digitalCVBody = document.getElementById("digital-cv-body");
   digitalCVBody.style.position = "relative";
