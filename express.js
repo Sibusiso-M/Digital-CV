@@ -25,7 +25,7 @@ const { error } = require("console");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use(cors());
+app.use(cors());
 app.use(express.static("."));
 app.use(express.static(path.join(__dirname)));
 app.use(express.static(path.join(__dirname, "public")));

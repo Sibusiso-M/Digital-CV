@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .getElementById("contact-me-form")
     .addEventListener("submit", function (event) {
       event.preventDefault();
-      resetFormFields();
       submitForm();
+      // resetFormFields();
     });
 
   document.getElementById("successMessage").style.display = "none";
@@ -61,25 +61,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const dateOfVisit = `${year}-${month}-${day}`;
     const timeOfVisit = `${hours}:${minutes}:${seconds}`;
 
-    const formData = {
-      firstName,
-      lastName,
-      emailAddress,
-      message,
-      dateOfVisit,
-      timeOfVisit
-    };
+    // const formData = {
+    //   firstName,
+    //   lastName,
+    //   emailAddress,
+    //   message,
+    //   dateOfVisit,
+    //   timeOfVisit
+    // };
+
+    const formData = new FormData(document.querySelector("#contact-me-form"));
+    formData.append("dateOfVisit", dateOfVisit);
+    formData.append("timeOfVisit", timeOfVisit);
 
     console.log("form submit fn");
-    console.log({
-      firstName
-    });
-    fetch("/submit", {
+    console.log(formData);
+    
+    fetch("https://sibusiso-mdlovu-digital-cv.netlify.app/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: formData,
     })
       .then((response) => response.json())
       .then((data) => {
