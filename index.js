@@ -44,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function submitForm() {
-    const firstName = document.getElementById("firstName");
-    const lastName = document.getElementById("lastName");
-    const emailAddress = document.getElementById("emailAddress");
-    const message = document.getElementById("message");
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const emailAddress = document.getElementById("emailAddress").value;
+    const message = document.getElementById("message").value;
 
     const currentDateAndTime = new Date();
 
