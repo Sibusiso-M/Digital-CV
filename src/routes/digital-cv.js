@@ -20,7 +20,7 @@ const sendFileHandler = (fileName) => (request, response) => {
 
 router.get("https://sibusiso-mdlovu-digital-cv.netlify.app/", sendFileHandler("index.html"));
 
-router.post("https://sibusiso-mdlovu-digital-cv.netlify.app/submit", async (request, response) => {
+router.post("/submit", async (request, response) => {
   const {
     firstName,
     lastName,
