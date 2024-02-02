@@ -65,8 +65,6 @@ document.addEventListener("DOMContentLoaded", function () {
     formData.append("dateOfVisit", dateOfVisit);
     formData.append("timeOfVisit", timeOfVisit);
 
-    // console.log(Object.fromEntries(formData));
-
     fetch("https://sibusiso-mdlovu-digital-cv.netlify.app/submit", {
       method: "POST",
       headers: {
